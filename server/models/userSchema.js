@@ -33,9 +33,17 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    tskills:{
+    skill1:{
         type:String,
-        required:true
+    },
+    skill2:{
+        type:String,
+    },
+    skill3:{
+        type:String,
+    },
+    skill4:{
+        type:String,
     },
     address:{
         type:String,

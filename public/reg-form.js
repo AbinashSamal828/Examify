@@ -20,7 +20,7 @@ checkbox.addEventListener("change", function () {
 
 sub.addEventListener("click", (e) => {
   //console.log(age.value);
-  e.preventDefault();
+  // e.preventDefault();
   if (age.value < 18 || age.value > 25) {
     err.innerHTML = "* age should be between 18 and 25";
     if (err.style.display === "none") {
@@ -45,4 +45,5 @@ sub.addEventListener("click", (e) => {
       err.style.display = "none";
     }
   }
+  // console.log(nameval.value);
 });
