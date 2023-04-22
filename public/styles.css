@@ -1,8 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 .logo {
   color: white;
@@ -97,4 +96,16 @@ a {
 .content div img {
   float: right;
   width: 50%;
+}
+.hide {
+  display: none;
+}
+#wel {
+  display: flex;
+  flex-direction: column;
+}
+#wel div {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: 500;
 }

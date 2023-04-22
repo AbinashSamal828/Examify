@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>e-Exam portal</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>
-        <div class="lr">
-            <div>
-                <div class="logo">E-exam</div>
-                <div class="sbar">
-                    <input type="text">
-                    <button>search</button>
-                </div>
-            </div>
-            <div class="navs">
-                <ul>
-                    <li><a href="eExam.html">e-Exam</a></li>
-                    <li><a href="E-Repository.html">e-repository</a></li>
-                    <li><a href="of.html">Openforum</a></li>
-                    <li><a href="myWall.html">myWall</a></li>
-                </ul>
-            </div>
-            <div>
-                <button class="btn">login</button>
-                <button class="btn"><a href="reg-form.html">register</a></button>
-            </div>
+      <div class="lr">
+        <div>
+          <div class="logo">E-exam</div>
+          <div class="sbar">
+            <input type="text" />
+            <button>search</button>
+          </div>
         </div>
-        <div class="pinkbg">
-            <img id="bgimg" width="100%" src="29493.jpg" alt="image">
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat corporis incidunt quos,
-                    perferendis,
-                    doloremque officiis ad quis quia laudantium, tempore quasi iure cumque pariatur neque eum itaque
-                    tenetur
-                    similique doloribus.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis quas obcaecati recusandae rem
-                    dicta harum sint hic voluptatem necessitatibus sapiente corporis dolor mollitia, ipsum perferendis.
-                    Deserunt esse sit consectetur unde. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
-                    sit, quasi nulla expedita repellat explicabo ex? Eius laboriosam quae eum doloremque deserunt, harum
-                    natus velit, quod nisi sequi recusandae et!</p>
-                <div>
-                    <img src="edu.png" alt="">
-                </div>
-            </div>
-            <div>
-                <footer>
-                    <a href="">contacts</a>
-                    <a href="">services</a>
-                </footer>
-            </div>
+        <div class="navs" id="navs">
+          <ul>
+            <li><a href="eExam.html">e-Exam</a></li>
+            <li><a href="E-Repository.html">e-repository</a></li>
+            <li><a href="of.html">Openforum</a></li>
+            <li><a href="myWall.html">myWall</a></li>
+          </ul>
         </div>
+        <div id="reg">
+          <button class="btn"><a href="login.html">login</a></button>
+          <button class="btn"><a href="reg-form.html">register</a></button>
+        </div>
+        <div id="wel">
+          <div>Welcome,</div>
+        </div>
+      </div>
+      <div class="pinkbg">
+        <img id="bgimg" width="100%" src="29493.jpg" alt="image" />
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
+            corporis incidunt quos, perferendis, doloremque officiis ad quis
+            quia laudantium, tempore quasi iure cumque pariatur neque eum itaque
+            tenetur similique doloribus. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Officiis quas obcaecati recusandae rem dicta harum
+            sint hic voluptatem necessitatibus sapiente corporis dolor mollitia,
+            ipsum perferendis. Deserunt esse sit consectetur unde. Lorem, ipsum
+            dolor sit amet consectetur adipisicing elit. Atque sit, quasi nulla
+            expedita repellat explicabo ex? Eius laboriosam quae eum doloremque
+            deserunt, harum natus velit, quod nisi sequi recusandae et!
+          </p>
+          <div>
+            <img src="edu.png" alt="" />
+          </div>
+        </div>
+        <div>
+          <footer>
+            <a href="">contacts</a>
+            <a href="">services</a>
+          </footer>
+        </div>
+      </div>
     </div>
-</body>
-
+    <script defer>
+      const id = localStorage.getItem("id");
+      const reg = document.getElementById("reg");
+      const wel = document.getElementById("wel");
+      const name=document.createElement("div");
+      wel.appendChild(name).textContent=id;
+      const navs = document.getElementById("navs");
+      if (!id) {
+        navs.style.display = "none";
+        wel.style.display = "none";
+      } else {
+        reg.style.display = "none";
+      }
+    </script>
+  </body>
 </html>
