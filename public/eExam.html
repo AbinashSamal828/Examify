@@ -14,10 +14,7 @@
         <div class="lr" style="background-color:#8C5AF6;">
             <div>
                 <div class="logo">E-Exam</div>
-                <div class="sbar">
-                    <input type="text">
-                    <button>search</button>
-                </div>
+
             </div>
             <div class="navs">
                 <ul>
@@ -29,8 +26,7 @@
                 </ul>
             </div>
             <div>
-                <h2 style="color:white">Hello {username}</h2>
-                <button class="btn">logout</button>
+                <h2 style="color:white">Hello <span id="namegreet"></span></h2>
             </div>
         </div>
 
@@ -59,7 +55,18 @@
             <button id="restart">Restart</button>
         </div>
     </section>
-    <script>
+    <script defer>
+        const user = localStorage.getItem("id");
+        async function fetchUsersByID(id) {
+            const result = await fetch(`http://localhost:8081/user/${id}`);
+            const userDetails = await result.json();
+            return userDetails;
+        }
+
+        fetchUsersByID(`${user}`).then((data) => {
+            console.log(data);
+            document.getElementById("namegreet").innerHTML = data.name
+        });
 
         let timeLeft = document.querySelector(".time-left");
         let quizContainer = document.getElementById("container");
@@ -158,7 +165,7 @@
                     scoreContainer.classList.remove("hide");
 
                     userScore.innerHTML =
-                        "Your score is " + scoreCount + " out of " + quizArray.length + " and time taken is " + `${20 - count}` + " seconds";
+                        "Score : " + scoreCount + " / " + quizArray.length + " <br> Time  : " + `${20 - count}` + "s";
                     clearInterval(countdown);
                 } else {
 
@@ -212,10 +219,10 @@
                 question_DIV.innerHTML = i.question;
                 div.appendChild(question_DIV);
                 div.innerHTML += `
-    <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
-     <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
-      <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
-       <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+    <button class="option-div" onclick="checker(this)">a. ${i.options[0]}</button>
+     <button class="option-div" onclick="checker(this)">b. ${i.options[1]}</button>
+      <button class="option-div" onclick="checker(this)">c. ${i.options[2]}</button>
+       <button class="option-div" onclick="checker(this)">d. ${i.options[3]}</button>
     `;
                 quizContainer.appendChild(div);
             }

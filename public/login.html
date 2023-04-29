@@ -71,21 +71,27 @@
       </div>
     </form>
     <script>
-      const form = document.getElementById("form");
-      form.addEventListener("submit", onSubmitHandler);
-      function onSubmitHandler() {
-        const id = document.getElementById("id");
-        //   console.log(id);
-        // const response=fetch("http://localhost:8081/login")
-        //   .then((response) => {
-        //     response.json;
-        //   })
-        //   .then((data) => {
-        //     alert("hello");
-        localStorage.setItem("id", id.value);
-        // console.log(response)
-        //   });
-      }
+          const form = document.getElementById("form");
+          form.addEventListener("submit", onSubmitHandler);
+          function onSubmitHandler() {
+            const id = document.getElementById("id");
+              console.log(id);
+            // const response=fetch("http://localhost:8081/login")
+            //   .then((response) => {
+            //     response.json;
+            //   })
+            //   .then((data) => {
+            //     alert("hello");
+            localStorage.setItem("id", id.value);
+            // console.log(response)
+            set_user(id.value);
+            //   });
+          }
+          async function set_user(id){
+            const user = await fetch("http://localhost:8081/all_users/"+id);
+            const data = await user.json();
+            localStorage.setItem('username',data.name);
+          }
     </script>
   </body>
 </html>

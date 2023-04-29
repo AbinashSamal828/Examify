@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Openforum</title>
+    <link rel="stylesheet" href="ofstyles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Forum Reply
-    </title>
-    <link rel="stylesheet" href="ofstyles.css">
-</head>
-
-<body>
+  <body>
     <section>
-        <nav>
-            <div>
-                <h2>Openforum Reply</h2>
-            </div>
-            <div>
-                <h2>Hello {username}</h2>
-                <button style="float: right;color:white;">logout</button>
-            </div>
-        </nav>
+      <div
+        class="lr"
+        style="background-image: linear-gradient(to right, #2479d3, #722e83)"
+      >
+        <div>
+          <div class="logo">Openforum</div>
+          <div class="sbar">
+            <input type="text" />
+            <button>search</button>
+          </div>
+        </div>
+        <div class="navs">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="eExam.html">e-Exam</a></li>
+            <li><a href="E-Repository.html">e-repository</a></li>
+            <li><a href="of.html">Openforum</a></li>
+            <li><a href="myWall.html">myWall</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hello <span id="name_greet"></span></h2>
+        </div>
+      </div>
     </section>
     <section class="container">
         <div class="write_post">
-            <p id="caption">Write reply...</p>
+          <div id="post_content">
+            <h3>POST:-</h3>
+            <div id="post"></div>
+          </div>
+          <p id="caption">Write reply...</p>
             <form action="">
                 <!-- <img style="float:right;" src="edu.png" alt="" width="50%" height="auto"> -->
                 <textarea name="comment" id="comment" cols="50" rows="30"></textarea>
-
                 <br>
-                <button type="submit" style="color:white;">POST</button>
+                <button type="submit" id="submit_reply" style="color:white;">POST</button>
             </form>
-
         </div>
         <div>
-            <img src="edu.png" alt="" width="500px" height="auto">
-
+            <div id="all_replies">
         </div>
         <!-- <div style="float: right"><img src="edu.png" alt="" width="50%" height="auto"></div> -->
     </section>
-    <script src="of.js"></script>
+    <script type="module" src="ofreply.js"></script>
 </body>
 
 </html>

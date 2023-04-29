@@ -77,7 +77,7 @@ button:hover {
   background-color: lightblue;
 }
 .docs button {
-  color: white;
+  color: black;
   background-color: rgb(213, 213, 233);
 }
 .docs button:hover {

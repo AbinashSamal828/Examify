@@ -1,93 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Openforum</title>
-    <link rel="stylesheet" href="ofstyles.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="ofstyles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <section>
-        <div class="lr" style="background-image: linear-gradient(to right, #2479d3, #722e83);">
-            <div>
-                <div class="logo">Openforum</div>
-                <div class="sbar">
-                    <input type="text">
-                    <button>search</button>
-                </div>
-            </div>
-            <div class="navs">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="eExam.html">e-Exam</a></li>
-                    <li><a href="E-Repository.html">e-repository</a></li>
-
-                    <li><a href="myWall.html">myWall</a></li>
-                </ul>
-            </div>
-            <div>
-                <h2>Hello {username}</h2>
-                <button class="btn">logout</button>
-            </div>
+      <div
+        class="lr"
+        style="background-image: linear-gradient(to right, #2479d3, #722e83)"
+      >
+        <div>
+          <div class="logo">Openforum</div>
+          <div class="sbar">
+            <input type="text" />
+            <button>search</button>
+          </div>
         </div>
+        <div class="navs">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="eExam.html">e-Exam</a></li>
+            <li><a href="E-Repository.html">e-repository</a></li>
 
+            <li><a href="myWall.html">myWall</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Hello <span id="name_greet"></span></h2>
+        </div>
+      </div>
     </section>
-
-
 
     <section class="container">
-        <div class="write_post">
-            <p id="caption">Post thoughts, updates, queries and more :D</p>
-            <form action="">
-                <textarea name="comment" id="comment" cols="50" rows="20"></textarea>
-                <br>
-                <button id="sub" style="color:white; background-color: rgb(40, 40, 180); margin-top:20px;"
-                    type="submit">POST</button>
-            </form>
-        </div>
-        <div class="all_posts">
-            <div>
-                <h3>username1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae itaque eaque, quidem, quia
-                    voluptatum quo reprehenderit, nam repellat enim dolores architecto earum quam illo est iusto neque
-                    nemo voluptatem!</p>
-                <button><a href="ofreply.html">REPLY</a></button>
-                <div>
-                    <textarea name="" id="reply_text" cols="50" rows="30"></textarea>
-                </div>
-            </div>
-            <div>
-                <h3>username2</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae itaque eaque, quidem, quia
-                    voluptatum quo reprehenderit, nam repellat enim dolores architecto earum quam illo est iusto neque
-                    nemo voluptatem!</p>
-                <button><a href="ofreply.html">REPLY</a></button>
-                <div>
-                    <textarea name="" id="reply_text" cols="30" rows="3"></textarea>
-                </div>
-            </div>
-            <div>
-                <h3>username3</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum a voluptas illo qui. Saepe commodi
-                    fuga quo earum. Molestias tempore aliquid velit cumque deserunt laudantium dolorem nesciunt?
-                    Dignissimos eum recusandae molestiae suscipit, eius facilis fuga ullam iure, fugiat, voluptatibus
-                    eligendi quia. Tempora illum deserunt corrupti blanditiis voluptatibus, doloribus velit adipisci?
-                    Facere, ducimus distinctio cupiditate corporis rem deserunt ipsa sint. Ipsam, assumenda incidunt et
-                    totam doloribus corporis porro amet accusantium dignissimos blanditiis, sunt, veritatis autem
-                    inventore ipsa. Libero ullam magni nihil qui ea non ab, dolor sequi. Omnis dolores magni cum,
-                    deserunt laboriosam ullam, nostrum, neque molestias corporis facilis cupiditate assumenda.</p>
-                <button><a href="ofreply.html">REPLY</a></button>
-                <div>
-                    <textarea name="" id="reply_text" cols="30" rows="3"></textarea>
-                </div>
-            </div>
-        </div>
+      <div class="write_post">
+        <p id="caption">Post thoughts, updates, queries and more :D</p>
+        <br />
+        <form method="POST" action="http://localhost:8081/post" name="ofform">
+          <textarea name="content" id="content" cols="50" rows="20"></textarea>
+          <br />
+          <input type="text" name="id" id="id" style="display: none;">
+          <input type="text" name="username" id="username" style="display: none;">
+          <button
+            id="sub"
+            style="
+              color: white;
+              background-color: rgb(40, 40, 180);
+              margin-top: 20px;
+            "
+            type="submit"
+          >
+            POST
+          </button>
+        </form>
+      </div>
+      <div id="all_posts">
+      </div>
     </section>
-    <script src="of.js"></script>
-</body>
-
+    <script type="module" src="of.js"></script>
+  </body>
 </html>

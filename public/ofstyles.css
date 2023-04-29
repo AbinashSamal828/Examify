@@ -26,19 +26,31 @@ h2,
 }
 .write_post {
   width: 50%;
+  margin: 30px;
 }
 textarea {
   border-radius: 10px;
+  width: 35vw;
 }
 .write_post #comment {
   border-color: white;
-  width: 70%;
+  width: 25vw;
+  height: 40vh;
+  margin: 20px;
 }
-.all_posts {
+#all_posts {
+  border: 1px solid white;
+  border-radius: 10px;
+  height: 30rem;
+  width: 35%;
+  overflow: hidden scroll;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#all_replies {
   border: 1px solid white;
   border-radius: 10px;
   height: 550px;
-  width: 50%;
+  width: 400px;
   overflow: hidden scroll;
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -59,9 +71,19 @@ button {
   padding: 10px 20px 10px 20px;
   border-radius: 50px;
   border: none;
+  margin-top: 10px;
   background-color: rgba(36, 12, 37, 0.8);
 }
 
 button:hover {
   background-color: white;
+  color: black;
+}
+
+#post_content{
+  background-color: aliceblue;
+  height: 10vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 10px;
 }

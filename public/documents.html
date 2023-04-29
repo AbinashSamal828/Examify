@@ -4,7 +4,7 @@
 <head>
 
   <title>Documents</title>
-  <link rel="stylesheet" href="docs.css">
+  <link rel="stylesheet" href="./docs.css">
 </head>
 
 <body>
@@ -14,9 +14,8 @@
         <h2>E-Repository</h2>
       </div>
       <div class="user">
-        <h4>Welcome {username}</h4>
+        <h4>Welcome <span id="namegreet"></span></h4>
         <div>
-          <button>logout</button>
           <button><a href="E-Repository.html" style="color:white">back</a></button>
         </div>
       </div>
@@ -24,30 +23,52 @@
   </section>
   <main>
 
-    <p>Here,you can find all the documents.</p>
-
-    <section class="docs">
+    <!-- <section class="docs">
       <h3>Document 1</h3>
       <p>uploaded by user</p>
       <button type="submit"><a href="#">Download Now</a></button>
+    </section> -->
 
-    </section>
-    <section class="docs">
-      <h3>Document 2</h3>
-      <p>uploaded by user</p>
-      <button type="submit"><a href="#">Download Now</a></button>
+    <script defer>
+      const user = localStorage.getItem("id");
+      async function fetchUsersByID(id) {
+        const result = await fetch(`http://localhost:8081/user/${id}`);
+        const userDetails = await result.json();
+        return userDetails;
+      }
 
-    </section>
-    <section class="docs">
-      <h3>Document 3</h3>
-      <p>uploaded by user</p>
-      <button type="submit"><a href="#">Download Now</a></button>
-    </section>
-    <section class="docs">
-      <h3>Document 4</h3>
-      <p>uploaded by user</p>
-      <button type="submit"><a href="#">Download Now</a></button>
-    </section>
+      fetchUsersByID(`${user}`).then((data) => {
+        console.log(data);
+        document.getElementById("namegreet").innerHTML = data.name
+      });
+
+
+      fetch("http://localhost:8081/list_files").then(async (data) => {
+        let fileList = await data.json()
+        fileList.forEach((file, i) => {
+          console.log(file)
+          const sec = document.createElement("section")
+          sec.className = "docs"
+          const docNum = document.createElement("h3")
+          docNum.innerText = `Document ${i + 1}`
+          const docText = document.createElement("p")
+          docText.innerText = `uploaded by ${user}`
+          const downloadButton = document.createElement("button")
+          downloadButton.type = "submit"
+          downloadButton.innerText = "Download Now"
+          downloadButton.innerText
+          downloadButton.onclick = () => {
+            window.open(`http://localhost:8081/getFile/${file}`, "_self").focus();
+
+          }
+          sec.appendChild(docNum)
+          sec.appendChild(docText)
+          sec.appendChild(downloadButton)
+          document.body.appendChild(sec)
+        });
+      })
+
+    </script>
 </body>
 
 </html>

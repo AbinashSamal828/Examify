@@ -78,3 +78,74 @@ a {
   height: 35px;
   margin-left: 10px;
 }
+body {
+  background-color: #f3f3fe;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+}
+.container h1 {
+  text-align: center;
+  color: white;
+}
+form {
+  background-color: white;
+  padding: 30px;
+}
+.vault {
+  background-color: white;
+  padding: 30px;
+}
+form .input-group {
+  margin-bottom: 15px;
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+form #name {
+  padding: 12px 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+form .file-select {
+  padding: 12px 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#files {
+  padding-left: 100px;
+  cursor: pointer;
+}
+
+#icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 170px;
+  padding-top: 80px;
+}
+.submit-btn {
+  width: 100%;
+  border: none;
+  background: linear-gradient(
+    266deg,
+    rgba(18, 15, 64, 1) 0%,
+    rgba(9, 9, 121, 1) 22%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  font-size: 18px;
+  color: white;
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}

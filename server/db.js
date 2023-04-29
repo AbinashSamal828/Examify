@@ -1,6 +1,7 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://root:root@cluster0.ztaanu7.mongodb.net/examify?retryWrites=true&w=majority";
+require('dotenv').config();
+const uri = process.env.DB_URI;
 const mongoose=require('mongoose');
 const User=require('./models/userSchema')
 // const User= require('./models/userSchema')

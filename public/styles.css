@@ -1,7 +1,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .logo {
   color: white;
@@ -13,6 +14,10 @@
   display: flex;
   justify-content: space-between;
 }
+.headerInfo {
+  z-index: 2;
+}
+
 .lr div {
   display: flex;
   margin: 10px;
@@ -52,7 +57,9 @@
   padding-top: 40px;
   width: 50%;
 }
-
+.navs {
+  z-index: 2;
+}
 .navs ul {
   list-style: none;
   display: flex;
@@ -96,6 +103,12 @@ a {
 .content div img {
   float: right;
   width: 50%;
+  animation: svganimation 2s alternate forwards infinite;
+}
+
+#bgimg {
+  animation: bganimation 2s forwards;
+  z-index: -1;
 }
 .hide {
   display: none;
@@ -108,4 +121,21 @@ a {
   font-family: monospace;
   font-size: x-large;
   font-weight: 500;
+}
+@keyframes svganimation {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(0, -50px) scale(1.2);
+  }
+}
+
+@keyframes bganimation {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
 }

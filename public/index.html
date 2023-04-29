@@ -62,13 +62,13 @@
       </div>
     </div>
     <script defer>
-      const id = localStorage.getItem("id");
+      const name = localStorage.getItem("username");
       const reg = document.getElementById("reg");
       const wel = document.getElementById("wel");
-      const name=document.createElement("div");
-      wel.appendChild(name).textContent=id;
+      const name_element=document.createElement("div");
+      wel.appendChild(name_element).textContent=name;
       const navs = document.getElementById("navs");
-      if (!id) {
+      if (!name) {
         navs.style.display = "none";
         wel.style.display = "none";
       } else {
